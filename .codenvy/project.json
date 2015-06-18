@@ -1,0 +1,1 @@
+{"mixinTypes":[],"builders":{"configs":{},"default":"ant"},"runners":{"configs":{"system:/java/standalone/simple/cli":{"ram":1000,"variables":{},"options":{}},"project:/bakery%202%203":{"ram":1000,"variables":{"configurationType":"java"},"options":{}}},"default":"project:/bakery 2 3"},"type":"ant","attributes":{"languageVersion":["1.6"],"language":["java"]}}
