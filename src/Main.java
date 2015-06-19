@@ -63,9 +63,6 @@ public class Main {
             counter.getCount() != (numTotalInc/numThread) * numThread) {
           System.err.println("Error: The counter is not equal to the number "
               + "of total increment");
-          System.err.println("counter = " + counter.getCount());
-          System.err.println("numTotalInc = " + numTotalInc);
-          System.err.println("numThread = " + numThread);
         } else {
           // print total execute time if the result is correct
           System.out.println(executeTimeMS);

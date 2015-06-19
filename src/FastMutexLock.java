@@ -1,18 +1,15 @@
-// TODO 
-// Implement Fast Mutex Algorithm
+// Fast Mutex Algorithm
 
 public class FastMutexLock implements MyLock {
-    int[] flag; // down=1, right=2, left=3, up=4
-    final int down=1;
-    final int right=2;
-    final int left=3;
-    final int up=4;
+    boolean[] flag;
+    final boolean up=true;
+    final boolean down=false;
     int x;
     int y;
     int numThread;
   
     public FastMutexLock(int numThread) {
-      this.flag = new int[numThread];
+      this.flag = new boolean[numThread];
       this.x = -1;
       this.y = -1;
       this.numThread = numThread;
@@ -25,7 +22,7 @@ public class FastMutexLock implements MyLock {
         x = myId;
         if (y != -1) {
           flag[myId] = down;
-          while (y != myId); // wait for my turn
+          while (y != -1); // wait for my turn
         } else {
           y = myId;
           if (x == myId) {
@@ -37,7 +34,7 @@ public class FastMutexLock implements MyLock {
               if (y == myId) {
                 return;
               } else {
-                while (y != 1); //wait
+                while (y != -1); //wait
               }
             }
           }
@@ -47,6 +44,7 @@ public class FastMutexLock implements MyLock {
 
     @Override
     public void unlock(int myId) {
-      // TODO: the unlocking algorithm
+      y = -1;
+      flag[myId] = down;
     }
 }

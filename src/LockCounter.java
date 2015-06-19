@@ -10,9 +10,7 @@ public class LockCounter extends Counter {
 
     @Override
     public void increment() {
-      Thread currentThread = Thread.currentThread();
-      MyThread currentMyThread = (MyThread)currentThread;
-      //int myId = Integer.parseInt(currentMyThread.getName());
+      MyThread currentMyThread = MyThread.getCurrentMyThread();
       int myId = currentMyThread.getIntId();
       this.lock.lock(myId);
       this.count++;
