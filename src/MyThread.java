@@ -4,7 +4,6 @@ public class MyThread extends Thread {
   Counter counter;
 
   public MyThread(int id, int increments, Counter counter) {
-    //this.setName(String.valueOf(id));
     this.myId = id;
     this.increments = increments;
     this.counter = counter;
@@ -15,8 +14,7 @@ public class MyThread extends Thread {
   }
 
   public int getIntId() {
-    //return Integer.parseInt(this.getName());
-    return
+    return this.myId;
   }
 
   public void run() {
